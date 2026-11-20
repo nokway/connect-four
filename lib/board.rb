@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Class for handling board
 class BoardClass
   attr_accessor :board_hash
 
