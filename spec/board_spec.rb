@@ -1,13 +1,12 @@
+require_relative '../lib/board'
 describe BoardClass do
   describe '#place' do
     subject(:board_place) { described_class.new }
 
     context 'when placing in a position' do
       it 'updates the position dictionary' do
-        expected_dictionary = { 'Red' => [1, 1] }
-        expect(board_place.place('Red',
-                                 [1,
-                                  1])).to change(board_place.instance_variable_get(:@dictionary)).to(expected_dictionary)
+        expected_hash = { 'Red' => [1, 1] }
+        expect { board_place.place('Red', [1, 1]) }.to change { board_place.board_hash }.to(expected_hash)
       end
     end
   end
